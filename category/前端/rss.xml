@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Rabbit🐇Home • Posts by &#34;前端&#34; category</title>
+        <link>https://rabbitfriend.tk</link>
+        <description>个人技术博客</description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 30 Apr 2022 01:50:33 +0800</pubDate>
+        <lastBuildDate>Sat, 30 Apr 2022 01:50:33 +0800</lastBuildDate>
+        <category>Hexo</category>
+        <category>Markdown</category>
+        <category>github</category>
+        <item>
+            <guid isPermalink="true">https://rabbitfriend.tk/2022/04/30/hexo_blog_guide_2/</guid>
+            <title>hexo博客搭建教程（二）</title>
+            <link>https://rabbitfriend.tk/2022/04/30/hexo_blog_guide_2/</link>
+            <category>Hexo</category>
+            <pubDate>Sat, 30 Apr 2022 01:50:33 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;上文我们搭建了 hexo 博客主页，本文主要讲的是如何将 hexo 博客部署到线上&lt;/p&gt;
+&lt;h3 id=&#34;配置github仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#配置github仓库&#34;&gt;#&lt;/a&gt; 配置 github 仓库&lt;/h3&gt;
+&lt;p&gt;前往&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tLw==&#34;&gt; github&lt;/span&gt; 注册一个账户&lt;/p&gt;
+&lt;p&gt;然后进入主页，点击右上角 &lt;code&gt;+&lt;/code&gt;  号，选择 New repository&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;/2022/04/30/hexo_blog_guide_2/img1.jpg&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;找到 Repository name 那一栏，填上&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;/2022/04/30/hexo_blog_guide_2/img2.jpg&#34; alt=&#34;2&#34;&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;username.github.io    //username表示账户名&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;点击页面最下方 Create repository 创建仓库&lt;/p&gt;
+&lt;p&gt;打开本地博客根目录，修改_config.yml 文件，在文件末尾插入以下片段&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  repo: https://github.com/username/username.github.io.git&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  branch: master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;注册域名和服务器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注册域名和服务器&#34;&gt;#&lt;/a&gt; 注册域名和服务器&lt;/h3&gt;
+&lt;p&gt;注册自己喜欢的域名和服务器，然后进入控制面板，选择域名解析，将 CNAME 地址绑定&lt;a href=&#34;username.github.io&#34;&gt; username.github.io&lt;/a&gt; 链接&lt;/p&gt;
+&lt;h3 id=&#34;域名绑定仓库&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#域名绑定仓库&#34;&gt;#&lt;/a&gt; 域名绑定仓库&lt;/h3&gt;
+&lt;p&gt;进入刚才创建的仓库页面，点击右上角 Settings 按钮&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;/2022/04/30/hexo_blog_guide_2/img3.jpg&#34; alt=&#34;3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择 General 一栏下的 Branches，点击右边的铅笔按钮，将当前分支更名为 master&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;/2022/04/30/hexo_blog_guide_2/img4.jpg&#34; alt=&#34;4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择 General 一栏下的 Pages 一栏，点击 Choose a theme 按钮选择主题，然后在 Custom domain 一栏输入刚才申请的域名，点击 Save 按钮&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;/2022/04/30/hexo_blog_guide_2/img5.jpg&#34; alt=&#34;5&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;上传博客文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#上传博客文件&#34;&gt;#&lt;/a&gt; 上传博客文件&lt;/h3&gt;
+&lt;p&gt;进入博客根目录下的 source 文件夹，创建 CNAME 文件，不加后缀，填入刚才申请的域名&lt;/p&gt;
+&lt;p&gt;修改根目录下_config.yml 文件，找到 url 一行，填上刚才申请的域名&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;/2022/04/30/hexo_blog_guide_2/img6.jpg&#34; alt=&#34;6&#34;&gt;&lt;/p&gt;
+&lt;p&gt;回到博客根目录，输入&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;上传本地文件至仓库，以后更新博客均用此命令&lt;/p&gt;
+&lt;p&gt;然后输入域名就可以查看自己的 blog 啦 (・̀ ω・́)✧&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;/2022/04/30/hexo_blog_guide_2/img7.jpg&#34; alt=&#34;7&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://rabbitfriend.tk/2022/04/29/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</guid>
+            <title>hexo博客搭建教程（一）</title>
+            <link>https://rabbitfriend.tk/2022/04/29/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</link>
+            <category>Hexo</category>
+            <pubDate>Fri, 29 Apr 2022 18:25:47 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;本文主要针对想要搭建个人 blog 的读者。&lt;/p&gt;
+&lt;h3 id=&#34;安装git和nodejs&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装git和nodejs&#34;&gt;#&lt;/a&gt; 安装 Git 和 Node.js&lt;/h3&gt;
+&lt;p&gt;按如下地址给出的教程安装：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucnVub29iLmNvbS9naXQvZ2l0LWluc3RhbGwtc2V0dXAuaHRtbA==&#34;&gt;https://www.runoob.com/git/git-install-setup.html&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucnVub29iLmNvbS9ub2RlanMvbm9kZWpzLWluc3RhbGwtc2V0dXAuaHRtbA==&#34;&gt;https://www.runoob.com/nodejs/nodejs-install-setup.html&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装hexo&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#安装hexo&#34;&gt;#&lt;/a&gt; 安装 hexo&lt;/h3&gt;
+&lt;p&gt;打开 cmd，输入以下命令&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;npm install -g hexo-cli&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;初始化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#初始化&#34;&gt;#&lt;/a&gt; 初始化&lt;/h3&gt;
+&lt;p&gt;建立存放博客文件的空目录，依次输入以下命令&lt;/p&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;cd&lt;/span&gt; folder      //进入空目录&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo init      //初始化&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;npm install    //安装依赖&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;本地运行hexo&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#本地运行hexo&#34;&gt;#&lt;/a&gt; 本地运行 hexo&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;hexo s&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;浏览器访问：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2xvY2FsaG9zdDo0MDAwLw==&#34;&gt;http://localhost:4000/&lt;/span&gt;&lt;br&gt;
+ 即可进入自己搭建的博客&lt;/p&gt;
+&lt;h3 id=&#34;选择主题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#选择主题&#34;&gt;#&lt;/a&gt; 选择主题&lt;/h3&gt;
+&lt;p&gt;主题网址：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL3RoZW1lcy8=&#34;&gt;https://hexo.io/themes/&lt;/span&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
